@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Deploy
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@f04e980d3f3c2179d92097dbd2578fa433852691
         with:
           wranglerVersion: latest
           apiToken: ${{ secrets.CF_API_TOKEN }}
