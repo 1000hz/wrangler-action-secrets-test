@@ -1,0 +1,51 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: secret list
+          secrets: |
+            SECRET1
+            SECRET2
+            SECRET3
+            SECRET4
+            SECRET5
+            SECRET6
+            SECRET7
+            SECRET8
+            SECRET9
+            SECRET10
+            SECRET11
+            SECRET12
+            SECRET13
+            SECRET14
+            SECRET15
+        env:
+          SECRET1: ${{ secrets.SECRET1 }}
+          SECRET2: ${{ secrets.SECRET2 }}
+          SECRET3: ${{ secrets.SECRET3 }}
+          SECRET4: ${{ secrets.SECRET4 }}
+          SECRET5: ${{ secrets.SECRET5 }}
+          SECRET6: ${{ secrets.SECRET6 }}
+          SECRET7: ${{ secrets.SECRET7 }}
+          SECRET8: ${{ secrets.SECRET8 }}
+          SECRET9: ${{ secrets.SECRET9 }}
+          SECRET10: ${{ secrets.SECRET10 }}
+          SECRET11: ${{ secrets.SECRET11 }}
+          SECRET12: ${{ secrets.SECRET12 }}
+          SECRET13: ${{ secrets.SECRET13 }}
+          SECRET14: ${{ secrets.SECRET14 }}
+          SECRET15: ${{ secrets.SECRET15 }}
