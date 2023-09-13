@@ -12,12 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Deploy
-        uses: cloudflare/wrangler-action@f04e980d3f3c2179d92097dbd2578fa433852691
+        uses: cloudflare/wrangler-action@c6e0ce946777b89b50289c185e08c6aad456ec2a
         with:
           wranglerVersion: latest
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: secret list
           vars: |
             PLAIN_VAR
           secrets: |

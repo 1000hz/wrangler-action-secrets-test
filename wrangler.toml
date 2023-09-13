@@ -1,3 +1,4 @@
 name = "wrangler-action-secrets-test"
 main = "src/index.js"
 compatibility_date = "2023-09-04"
+account_id = "46567fa2c1f917369fdeac92ce7c1467"
