@@ -18,6 +18,8 @@ jobs:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           command: secret list
+          vars: |
+            PLAIN_VAR
           secrets: |
             SECRET1
             SECRET2
@@ -35,6 +37,7 @@ jobs:
             SECRET14
             SECRET15
         env:
+          PLAIN_VAR: ${{ vars.PLAIN_VAR }}
           SECRET1: ${{ secrets.SECRET1 }}
           SECRET2: ${{ secrets.SECRET2 }}
           SECRET3: ${{ secrets.SECRET3 }}
